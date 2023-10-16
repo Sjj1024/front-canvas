@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <!-- canvas must have id width height， its dont like css -->
-    <canvas id="first" width="300" height="300"></canvas>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <!-- canvas must have id width height， its dont like css -->
+        <canvas id="first" width="300" height="300"></canvas>
 
-    <script>
-      let c1 = document.getElementById('first')
-      let ctx = c1.getContext('2d')
-      ctx.fillRect(100, 100, 100, 100)
-    </script>
-  </body>
+        <script>
+            // 1.找到画布
+            let c1 = document.getElementById('first')
+            // 2.获取2维画笔：上下文对象
+            let ctx = c1.getContext('2d')
+            // 3.绘制图形：绘制矩形（位置x，位置y，宽度，高度）
+            ctx.fillRect(100, 100, 100, 100)
+        </script>
+    </body>
 </html>

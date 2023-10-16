@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <!-- 判断浏览器是否兼容canvas画布 -->
+        <canvas id="myCanvas" width="500" height="500">
+            <!-- 如果浏览器不支持，可以直接将提示文字放在这里 -->
+        </canvas>
+        <script>
+            var canvas = document.getElementById('myCanvas')
+            if (canvas.getContext) {
+                console.log('浏览器支持Canvas')
+                // 获取画笔：2d的画笔
+                var ctx = canvas.getContext('2d')
+                // 填充颜色
+                ctx.fillStyle = '#FF0000'
+                ctx.fillRect(0, 0, 150, 150)
+            } else {
+                console.log('浏览器不支持canvas')
+            }
+        </script>
+    </body>
+</html>
