@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <!-- 判断浏览器是否兼容canvas画布：画布是500x500，也可以单独再设置样式：200x200，就是将500这个东西压缩一下，放到了200这个盒子里面，也可以设置style为2000，就是放大，就是将500这个图片方法四倍，就会变成2000个像素。-->
+        <canvas id="myCanvas" width="500" height="500">
+            <!-- 如果浏览器不支持，可以直接将提示文字放在这里 -->
+        </canvas>
+        <script>
+            var canvas = document.getElementById('myCanvas')
+            if (canvas.getContext) {
+                const ctx = canvas.getContext('2d')
+                // 画笔开始和结束:分段路径，用不同路径的拆分，可以画出不同形状的图形
+                // ctx.beginPath()
+                // 只是画矩形，但是不显示的
+                ctx.rect(0, 0, 500, 500)
+                // 要填充一个颜色
+                ctx.fill()
+                // 画笔结束
+                // ctx.closePath()
+
+                // 如果不结束，就会导致上下两个内容用的同一根画笔
+                ctx.fillStyle = 'red'
+                ctx.fillRect(100, 100, 200, 200)
+            }
+        </script>
+    </body>
+</html>

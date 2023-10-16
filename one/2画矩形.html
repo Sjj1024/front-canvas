@@ -6,7 +6,7 @@
         <title>Document</title>
     </head>
     <body>
-        <!-- 判断浏览器是否兼容canvas画布 -->
+        <!-- 判断浏览器是否兼容canvas画布：画布是500x500，也可以单独再设置样式：200x200，就是将500这个东西压缩一下，放到了200这个盒子里面，也可以设置style为2000，就是放大，就是将500这个图片方法四倍，就会变成2000个像素。-->
         <canvas id="myCanvas" width="500" height="500">
             <!-- 如果浏览器不支持，可以直接将提示文字放在这里 -->
         </canvas>
@@ -16,8 +16,10 @@
                 console.log('浏览器支持Canvas')
                 // 获取画笔：2d的画笔
                 var ctx = canvas.getContext('2d')
-                // 填充颜色
+                console.log('ctx-------', ctx)
+                // 填充颜色:画笔颜色
                 ctx.fillStyle = '#FF0000'
+                // 画一个矩形：要知道要画的位置和大小
                 ctx.fillRect(0, 0, 150, 150)
             } else {
                 console.log('浏览器不支持canvas')

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <!-- 判断浏览器是否兼容canvas画布：画布是500x500，也可以单独再设置样式：200x200，就是将500这个东西压缩一下，放到了200这个盒子里面，也可以设置style为2000，就是放大，就是将500这个图片方法四倍，就会变成2000个像素。-->
+        <canvas id="myCanvas" width="500" height="500">
+            <!-- 如果浏览器不支持，可以直接将提示文字放在这里 -->
+        </canvas>
+        <script>
+            var canvas = document.getElementById('myCanvas')
+            if (canvas.getContext) {
+                console.log('浏览器支持Canvas')
+                // 获取画笔：2d的画笔
+                var ctx = canvas.getContext('2d')
+                console.log('ctx-------', ctx)
+                // 填充颜色:画笔颜色
+                ctx.fillStyle = '#FF0000'
+                // 画一个矩形路径：位置，矩形的宽度和高度
+                ctx.strokeRect(10, 10, 100, 100)
+                // 清除画布
+                let height = 0
+                const timer = setInterval(() => {
+                    // 清空画布
+                    ctx.clearRect(0, 0, 500, height)
+                    height += 1
+                    if (height >= canvas.clientHeight) {
+                        // 如果大于画布的高度，就清除定时器
+                        clearInterval(timer)
+                    }
+                }, 10)
+            } else {
+                console.log('浏览器不支持canvas')
+            }
+        </script>
+    </body>
+</html>
